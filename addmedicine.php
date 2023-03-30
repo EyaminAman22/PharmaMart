@@ -21,11 +21,11 @@
         <i class="fa-solid fa-user text-white text-[100px]"></i>
             <nav class="">
                 <ul class="flex pt-10 flex-col text-20">
-                    <a href="index.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
-                    <a href="employee.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
-                    <a href="medicine.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Medicine</li></a>
-                    <a href="company.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
-                    <a href="invoice.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
+                    <a href="index.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
+                    <a href="employee.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
+                    <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Medicine</li></a>
+                    <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
+                    <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
                     <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
                     <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li></a>
                 </ul>
@@ -42,7 +42,7 @@
         <div class="bg-navy mx-48 my-16 py-8 rounded-3xl text-white">
             <div class="flex justify-around">
                      <p class="font-semibold text-20 ml-[350px] mb-4">Medicine Details</p>
-                     <a href="index.html"><img  class="w-14 ml-64 mt-[-30px] ease-out duration-400 hover:w-16 hover:ease-in"  src="images/back.png" alt=""></a>
+                     <a href="index.php"><img  class="w-14 ml-64 mt-[-30px] ease-out duration-400 hover:w-16 hover:ease-in"  src="images/back.png" alt=""></a>
             </div>
             <div class="text-20">
                <form class="flex flex-col text-center gap-y-4" action="" method="POST">

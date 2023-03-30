@@ -20,11 +20,11 @@
         <i class="fa-solid fa-user text-white text-[100px]"></i>
             <nav class="">
                 <ul class="flex pt-10 flex-col text-20">
-                    <a href="index.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
-                    <a href="employee.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
-                    <a href="medicine.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Medicine</li></a>
-                    <a href="company.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
-                    <a href="invoice.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
+                    <a href="index.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
+                    <a href="employee.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
+                    <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Medicine</li></a>
+                    <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
+                    <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
                     <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
                     <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li></a>
                 </ul>
