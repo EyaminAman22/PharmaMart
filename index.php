@@ -20,11 +20,11 @@
         <i class="fa-solid fa-user text-white text-[100px]"></i>
             <nav class="">
                 <ul class="flex pt-10 flex-col text-20">
-                    <a href="index.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
-                    <a href="employee.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
-                    <a href="medicine.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Medicine</li></a>
-                    <a href="company.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
-                    <a href="invoice.html"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
+                    <a href="index.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
+                    <a href="employee.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
+                    <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Medicine</li></a>
+                    <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
+                    <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
                     <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
                     <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li></a>
                 </ul>
@@ -40,19 +40,19 @@
         </div>
         
         <div class="flex p-5 justify-around pt-28">
-        <a href="addemployee.html">
+        <a href="addemployee.php">
             <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                 <img class=" w-36" src="images/employee.png" alt="">
                 <h4 class="text-white text-20 font-semibold pt-2">Add Employee</h4>
             </div>
         </a>
-        <a href="addcompany.html">
+        <a href="addcompany.php">
             <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                 <img class=" w-36" src="images/company.png" alt="">
                 <h4 class="text-white text-20 font-semibold pt-2">Add Company</h4>
             </div>
         </a>
-        <a href="addinvoice.html">
+        <a href="addinvoice.php">
             <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                 <img class=" w-36" src="images/invoice.png" alt="">
                 <h4 class="text-white text-20 font-semibold pt-2">Add Invoice</h4>
@@ -72,7 +72,7 @@
         </a>
         </div>
         <div class="flex p-5 justify-around">
-            <a href="addmedicine.html">
+            <a href="addmedicine.php">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                     <img class=" w-36" src="images/medicine.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Add Medicine</h4>
