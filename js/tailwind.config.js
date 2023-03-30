@@ -3,6 +3,7 @@ tailwind.config = {
     extend: {
       colors: {
         'navy':'#040030',
+        'li-navy':'#1E1A49',
       },
       fontFamily:{
         'open':['Open Sans', "sans-serif"],
