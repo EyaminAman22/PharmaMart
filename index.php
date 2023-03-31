@@ -36,7 +36,7 @@
         <div class="w-auto bg-navy flex justify-around p-5 text-white">
             <input type="text" class="w-96 rounded-xl h-[30px] font-normal ml-[-100px]" placeholder="    Search Here">
             <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
-            <a href="#" class="font-semibold text-20 ml-[50px]">Log Out</a>
+            <a href="logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
         </div>
         
         <div class="flex p-5 justify-around pt-28">
