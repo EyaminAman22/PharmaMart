@@ -29,6 +29,7 @@
                         $_SESSION['username'] = $username;
                         $_SESSION['mobile'] = $row['mobile'];
                         $_SESSION['address'] = $row['address'];
+                        $_SESSION['provider_id'] = $row['userid'];
                         
                         header('Location: index.php');
                     
