@@ -54,6 +54,9 @@
             }
         }
     }
+    if(isset($_POST['reset'])){
+        header('Location: addemployee.php');
+    }
 
 
 ?>
@@ -120,7 +123,7 @@
                      <input class="w-96 ml-72 rounded-2xl" name="address" placeholder="Address"type="text">
                 <div class="flex justify-center gap-x-5 ">
                     <input class="inline-block ml-[-40px] bg-sky-500 ease-out duration-400 hover:bg-blue-500 hover:ease-in p-2 rounded-xl" type="submit" name = "submit">
-                    <input class="inline-block bg-sky-500 ease-out duration-400 hover:bg-blue-500 hover:ease-in p-2 rounded-xl" type="reset" >
+                    <input class="inline-block bg-sky-500 ease-out duration-400 hover:bg-blue-500 hover:ease-in p-2 rounded-xl" type="reset" name = "reset">
                 </div>
                </form>
             </div>
