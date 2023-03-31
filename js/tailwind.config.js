@@ -4,6 +4,8 @@ tailwind.config = {
       colors: {
         'navy':'#040030',
         'li-navy':'#1E1A49',
+        'indigo':'#87CEEB',
+       
       },
       fontFamily:{
         'open':['Open Sans', "sans-serif"],
@@ -13,6 +15,10 @@ tailwind.config = {
       '18':'18px',
       '20':'20px',
       '24':'24px',
+      '44':'44px',
+    },
+    backgroundImage:{
+      'med':"url('/images/medicine.jpg')",
     },
     },
   },
