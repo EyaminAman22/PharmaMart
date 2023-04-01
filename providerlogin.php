@@ -62,7 +62,7 @@
 </head>
 <body class="m-0 p-0 font-pop">
     <div class="flex">
-        <div class="w-3/5 bg-cover bg-[url('/images/medicine.jpg')]">
+        <div class="w-3/5 bg-cover bg-med">
         </div>
         <div class="w-2/5 bg-indigo h-[790px]">
             
