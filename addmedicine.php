@@ -9,6 +9,7 @@
         $mgf =$_POST['mgf'];
         $exp = $_POST['exp'];
         $category = $_POST['category'];
+        $type = $_POST['type'];
         $quantity = $_POST['quantity'];
         $base_price = $_POST['base_price'];
         $sell_price = $_POST['sell_price'];
@@ -32,6 +33,9 @@
         if(empty($category)){
             $error['category'] = "Error";
         }
+        if(empty($type)){
+            $error['type'] = "Error";
+        }
         if(empty($quantity)){
             $error['quantity'] = "Error";
         }
@@ -49,8 +53,8 @@
             $add_info = mysqli_query($conn, "SELECT* FROM companies WHERE provider_id = '$provider_id' AND company_id = '$company_id'");
 
             if(mysqli_num_rows($add_info)>0){
-                $insert = "INSERT INTO medicine(medicine_name,dosage,mgf,exp,category,quantity,base_price,sell_price,company_id,provider_id)
-                            VALUES('$medicine_name','$dosage','$mgf','$exp','$category','$quantity','$base_price','$sell_price','$company_id','$provider_id')";
+                $insert = "INSERT INTO medicine(medicine_name,dosage,mgf,exp,category,type,quantity,base_price,sell_price,company_id,provider_id)
+                            VALUES('$medicine_name','$dosage','$mgf','$exp','$category','$type','$quantity','$base_price','$sell_price','$company_id','$provider_id')";
 
                             if(mysqli_query($conn,$insert)){
                                 echo "ADD DONE";
@@ -124,8 +128,19 @@
               <input class="w-96 ml-72 rounded-2xl" name="exp" placeholder="EXP" type="date">
               <input class="w-96 ml-72 rounded-2xl" name="category" placeholder="Category" type="text" list="exampleList">
                     <datalist id="exampleList">
+                        <option value="Medicine">  
+                        <option value="skincare">
+                        <option value="suplement&vitamin">  
+                        <option value="surgical Equipment">
+                        <option value="health care">
+                        <option value="Baby care">
+                          </datalist>
+              <input class="w-96 ml-72 rounded-2xl" name="type" placeholder="Type"type="text">
+                    <datalist id="exampleList">
                         <option value="Tablet">  
-                        <option value="Liquid">
+                        <option value="Syrup">
+                        <option value="Powder">  
+                        <option value="Equipment">
                           </datalist>
               <input class="w-96 ml-72 rounded-2xl" name="quantity" placeholder="Quantity"type="number">
               <input class="w-96 ml-72 rounded-2xl" name="base_price" placeholder="Base Price" type="number">
