@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    include('db_connect.php');
+
+    $sql = "SELECT* FROM medicine WHERE category LIKE 'surgical Equipment'";
+    $result = mysqli_query($conn,$sql);
+
+    
+?>
 <!doctype html>
 <html>
 
@@ -59,213 +68,28 @@
                 <input type="text" class="w-96 rounded-xl h-[30px] font-normal ml-[-80px]"
                     placeholder="    Search Here">
                 <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
-                <a href="#" class="font-semibold text-20 ml-[50px]">Log in/Sign up</a>
+                <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
             </div>
             <div class="flex mt-2 ml-16 justify-start flex-wrap gap-8">
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/n95.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">N95 Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
+                <?php
+                while($row = mysqli_fetch_assoc($result)){
+                ?>
+                    <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
+                        <div class="flex flex-col items-center py-5">
+                            <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/nivialotion.png"
+                                alt="Bonnie image" />
+                            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><?php echo $row['medicine_name'] ?></h5>
+                            <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['dosage'] ?>mgf</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['type'] ?></span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Price : <?php echo $row['sell_price'] ?></span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?></span>
+                            <div class="flex mt-4">
+                                <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</a>   
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/duskmask.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Dust Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/Surgicalmask.png"
-                            alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Surgical Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/n95.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">N95 Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/duskmask.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Dust Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/Surgicalmask.png"
-                            alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Surgical Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/n95.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">N95 Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/duskmask.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Dust Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/Surgicalmask.png"
-                            alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Surgical Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/n95.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">N95 Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/duskmask.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Dust Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/Surgicalmask.png"
-                            alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Surgical Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/n95.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">N95 Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/duskmask.png" alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Dust Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                    <div class="flex flex-col items-center py-5">
-                        <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/Surgicalmask.png"
-                            alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Surgical Mask</h5>
-                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Out of Stock</span>
-                        <div class="flex mt-4">
-                            <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                                to Cart</a>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
-
-
-
         </div>
 </body>
 
