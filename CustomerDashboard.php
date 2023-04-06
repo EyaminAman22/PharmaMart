@@ -55,7 +55,7 @@
         <div class="w-auto bg-navy flex justify-around p-5 text-white ">
             <input type="text" class="w-96 rounded-xl h-[30px] font-normal ml-[-80px]" placeholder="    Search Here">
             <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
-            <a href="#" class="font-semibold text-20 ml-[50px]">Log in/Sign up</a>
+            <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log out</a>
         </div>
     
 <div id="default-carousel" class="relative w-full mt-[20px]" data-carousel="slide">
