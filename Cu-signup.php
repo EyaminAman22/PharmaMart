@@ -1,3 +1,39 @@
+<?php
+    session_start();
+    include 'db_connect.php';
+    
+    if(isset($_POST['submit'])){
+        
+
+        $c_name = $_POST['cname'];
+        $cphone = $_POST['phone'];
+        $c_pass = $_POST['pass'];
+
+        $error = [];
+
+        if(empty($c_name)){
+            $error['cname'] = 'Please write the Customer Name';
+        }
+        if(empty($cphone)){
+            $error['phone'] = 'Please write the Phone Number';
+        }
+        if(empty($c_pass)){
+            $error['cpass'] = 'Please write the password';
+        }
+
+        if(count($error)==0){
+            
+            $insert = "INSERT INTO customer_info(c_name,c_phone,pass) VALUES ('$c_name','$cphone','$c_pass')";
+
+            if(mysqli_query($conn,$insert)){
+                $MSG = " Signup Successfully";
+                header('Location: Cu-login.php');
+            }
+        }
+
+    }
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -17,10 +53,10 @@
         </div>
         <div class="w-2/5 bg-indigo item-center">
             <div class="w-3/5 mx-auto">
-                <form  class="bg-white flex flex-col rounded-3xl gap-y-5 p-[50px] text-center my-[131px]" method = "POST">
+                <form  class="bg-white flex flex-col rounded-3xl gap-y-5 p-[50px] text-center my-[131px]" action= "<?php echo $_SERVER['PHP_SELF']; ?>" method = "POST">
                     <h1 class="text-indigo text-44 font-pop font-semibold">Login</h1>
-                    <input class="w-[300px] h-[40px] rounded-xl outline outline-1" type="text" placeholder="  User Name" name = "username">
-                    <input class="w-[300px] h-[40px] rounded-xl outline outline-1" type="number" placeholder="  Phone Number" name = "username">
+                    <input class="w-[300px] h-[40px] rounded-xl outline outline-1" type="text" placeholder="  User Name" name = "cname">
+                    <input class="w-[300px] h-[40px] rounded-xl outline outline-1" type="number" placeholder="  Phone Number" name = "phone">
     
                     <input class="w-[300px] h-[40px] rounded-xl outline outline-1" type="password" placeholder="  Password" name = "pass">
     
@@ -28,7 +64,7 @@
                     <span>
                       
                     </span>
-                    <h2 class="text-24 font-semibold">Already have an Account? <a href="" class=" duration-700 ease-in-out text-violet-800 hover:bg-navy hover:text-white hover:px-4 hover:py-2 hover:rounded-xl">Log in</a></h2>
+                    <h2 class="text-24 font-semibold">Already have an Account? <a href="Cu-login.php" class=" duration-700 ease-in-out text-violet-800 hover:bg-navy hover:text-white hover:px-4 hover:py-2 hover:rounded-xl">Log in</a></h2>
                 </form>
             </div>
             
