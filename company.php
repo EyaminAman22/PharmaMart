@@ -38,9 +38,36 @@
             <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
             <a href="#" class="font-semibold text-20 ml-[50px]">Log Out</a>
         </div>
-        
+        <div class=" mt-5 text text-center"> 
+            <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy">Company Details</h1>
+            <table class=" mt-4 table-auto text-center mx-auto bg-navy text-white border  border-white border-collapse">
+                <thead>
+                    <tr class="">
+                        <th class="p-4 border  border-white">Company ID</th>
+                        <th class="p-4 border  border-white">Company Name</th>
+                        <th class="p-4 border  border-white">E-mail</th>
+                        <th class="p-4 border  border-white">Phone</th>
+                        <th class="p-4 border  border-white">Address</th>
+                        <th class="p-4 border  border-white">Operation</th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    <tr class="">
+                        <td class="p-4 border  border-white">12</td>
+                    <td class="p-4 border  border-white">Beximco</td>
+                    <td class="p-4 border  border-white">Example@gmail.com</td>
+                    <td class="p-4 border  border-white">00000-000000</td>
+                    <td class="p-4 border  border-white">153 karmicheal road,gabtoli</td>
+                    <td class="p-4 border  border-white space-x-3">
+                        <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Edit</a>
+                        <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Delete</a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
        
-           
+     
     </div>
     
 </div>

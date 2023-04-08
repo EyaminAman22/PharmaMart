@@ -58,13 +58,13 @@
                 <h4 class="text-white text-20 font-semibold pt-2">Add Invoice</h4>
             </div>
         </a>
-        <a href="#">
+        <a href="stock.php">
             <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                 <img class=" w-36" src="images/out-of-stock.png" alt="">
                 <h4 class="text-white text-20 font-semibold pt-2">Out of Stock</h4>
             </div>
         </a>
-        <a href="#">
+        <a href="expiry.php">
             <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                 <img class=" w-36" src="images/expired.png" alt="">
                 <h4 class="text-white text-20 font-semibold pt-2">Expiry</h4>

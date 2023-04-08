@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Medicine</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../css/all.min.css">
   <script src="js/tailwind.config.js"></script>
@@ -38,9 +38,42 @@
             <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
             <a href="#" class="font-semibold text-20 ml-[50px]">Log Out</a>
         </div>
-        
-       
-           
+        <div class=" mt-5 text text-center"> 
+    <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy">Medicine Details</h1>
+    <table class=" mt-4 table-auto text-center mx-auto bg-navy text-white border  border-white border-collapse">
+        <thead>
+            <tr class="">
+                <th class="p-2 border  border-white">Medicine Name</th>
+                <th class="p-2 border  border-white">Dosage</th>
+                <th class="p-2 border  border-white">manufacture Date</th>
+                <th class="p-2 border  border-white">Expire Date</th>
+                <th class="p-2 border  border-white">Category</th>
+                <th class="p-2 border  border-white">Quantity</th>
+                <th class="p-2 border  border-white">base Price</th>
+                <th class="p-2 border  border-white">Sell price</th>
+                <th class="p-2 border  border-white">Company ID</th>
+                <th class="p-2 border  border-white">Operation</th>
+            </tr>
+        </thead>
+        <tbody class="">
+            <tr class="">
+                <td class="p-2 border  border-white">Aspirin</td>
+                <td class="p-2 border  border-white">500mg</td>
+                <td class="p-2 border  border-white">2222-22-22</td>
+            <td class="p-2 border  border-white">3333-33-33</td>
+            <td class="p-2 border  border-white">Antacid</td>
+            <td class="p-2 border  border-white">22</td>
+            <td class="p-2 border  border-white">11</td>
+            <td class="p-2 border  border-white">13</td>
+            <td class="p-2 border  border-white">22</td>
+            <td class="p-2 border  border-white space-x-3">
+                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Edit</a>
+                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Delete</a>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
     </div>
     
 </div>
