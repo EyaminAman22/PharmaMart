@@ -4,9 +4,7 @@
     $provider_id = $_SESSION['provider_id'];
 
     $sql = "SELECT* FROM medicine WHERE provider_id LIKE '$provider_id'";
-    $result = mysqli_query($conn,$sql);
-
-    
+    $result = mysqli_query($conn,$sql);  
 ?>
 <!doctype html>
 <html>
@@ -80,7 +78,7 @@
                 <td class="p-2 border  border-white"><?php echo $row['sell_price']?></td>
                 <td class="p-2 border  border-white"><?php echo $row['company_id']?></td>
                 <td class="p-2 border  border-white space-x-3">
-                    <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Edit</a>
+                    <a class="inline-block mb-2 rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Edit</a>
                     <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Delete</a>
                 </td>
                 </tr>

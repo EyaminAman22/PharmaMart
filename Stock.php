@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    include('db_connect.php');
+    $provider_id = $_SESSION['provider_id'];
+    $sql = "SELECT* FROM medicine WHERE provider_id LIKE '$provider_id' AND dosage<100";
+    $result = mysqli_query($conn,$sql);  
+?>
 <!doctype html>
 <html>
 <head>
@@ -52,6 +59,23 @@
                 <th class="p-2 border  border-white text-red-500">Quantity</th>
             </tr>
         </thead>
+        <?php
+            while($row = mysqli_fetch_assoc($result)){
+        ?>
+            <tbody class="">
+                <tr class="">
+                    <td class="p-2 border  border-white"><?php echo $row['medicine_name']?></td>
+                    <td class="p-2 border  border-white"><?php echo $row['dosage']?></td>
+                <td class="p-2 border  border-white"><?php echo $row['exp']?></td>
+                <td class="p-2 border  border-white"><?php echo $row['category']?></td>
+                <td class="p-2 border  border-white"><?php echo $row['base_price']?></td>
+                <td class="p-2 border  border-white"><?php echo $row['company_id']?></td>
+                <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
+                </tr>
+            </tbody>
+        <?php
+        }
+        ?>
         <tbody class="">
             <tr class="">
                 <td class="p-2 border  border-white">Aspirin</td>
