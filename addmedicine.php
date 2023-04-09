@@ -121,7 +121,7 @@
                      <a href="index.php"><img  class="w-14 ml-64 mt-[-30px] ease-out duration-400 hover:w-16 hover:ease-in"  src="images/back.png" alt=""></a>
             </div>
             <div class="text-20">
-               <form class="flex flex-col text-center gap-y-4" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+               <form class="flex flex-col text-center text-black gap-y-4" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                      <input class="w-96 ml-72 rounded-2xl" name="medicine_name" placeholder="Medicine Name"type="text">
             <input class="w-96 ml-72 rounded-2xl" name="dosage" placeholder="Dosage(mg/ml)"type="number">
             <input class="w-96 ml-72 rounded-2xl" name="mgf" placeholder="MGF"type="date">
