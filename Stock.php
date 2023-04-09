@@ -2,7 +2,7 @@
     session_start();
     include('db_connect.php');
     $provider_id = $_SESSION['provider_id'];
-    $sql = "SELECT* FROM medicine WHERE provider_id LIKE '$provider_id' AND dosage<100";
+    $sql = "SELECT* FROM medicine WHERE provider_id LIKE '$provider_id' AND quantity<100";
     $result = mysqli_query($conn,$sql);  
 ?>
 <!doctype html>
@@ -70,7 +70,7 @@
                 <td class="p-2 border  border-white"><?php echo $row['category']?></td>
                 <td class="p-2 border  border-white"><?php echo $row['base_price']?></td>
                 <td class="p-2 border  border-white"><?php echo $row['company_id']?></td>
-                <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
+                <td class="p-2 border  border-white text-red-500"><?php echo $row['quantity']?></td>
                 </tr>
             </tbody>
         <?php
