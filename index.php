@@ -75,7 +75,7 @@
             <a href="addmedicine.php">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                     <img class=" w-36" src="images/medicine.png" alt="">
-                    <h4 class="text-white text-20 font-semibold pt-2">Add Medicine</h4>
+                    <h4 class="text-white text-20 font-semibold pt-2">Add Products</h4>
                 </div>
             </a>
             <a href="#">
