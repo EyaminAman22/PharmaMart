@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    include('db_connect.php');
+    $provider_id = $_SESSION['provider_id'];
+
+    $sql = "SELECT* FROM companies WHERE provider_id LIKE '$provider_id'";
+    $result = mysqli_query($conn,$sql);
+
+    
+?>
 <!doctype html>
 <html>
 <head>
@@ -22,7 +32,7 @@
                 <ul class="flex pt-10 flex-col text-20">
                     <a href="index.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
                     <a href="employee.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
-                    <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Medicine</li></a>
+                    <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Products</li></a>
                     <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
                     <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
                     <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
@@ -51,19 +61,25 @@
                         <th class="p-4 border  border-white">Operation</th>
                     </tr>
                 </thead>
+                <?php
+                    while($row = mysqli_fetch_assoc($result)){
+                ?>
                 <tbody class="">
                     <tr class="">
-                        <td class="p-4 border  border-white">12</td>
-                    <td class="p-4 border  border-white">Beximco</td>
-                    <td class="p-4 border  border-white">Example@gmail.com</td>
-                    <td class="p-4 border  border-white">00000-000000</td>
-                    <td class="p-4 border  border-white">153 karmicheal road,gabtoli</td>
+                        <td class="p-4 border  border-white"><?php echo $row['company_id']?></td>
+                    <td class="p-4 border  border-white"><?php echo $row['company_name']?></td>
+                    <td class="p-4 border  border-white"><?php echo $row['company_email']?></td>
+                    <td class="p-4 border  border-white"><?php echo $row['phone']?></td>
+                    <td class="p-4 border  border-white"><?php echo $row['address']?></td>
                     <td class="p-4 border  border-white space-x-3">
                         <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Edit</a>
                         <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Delete</a>
                     </td>
                     </tr>
                 </tbody>
+                <?php
+                    }
+                ?>
             </table>
         </div>
        
