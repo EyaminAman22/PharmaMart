@@ -95,7 +95,7 @@
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
         
     <div class="flex p-5 pt-12 justify-around">
-        <a href="#">
+        <a href="Cu-cart.php">
             <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                 <img class=" w-36" src="images/addcart.png" alt="">
                 <h4 class="text-white text-20 font-semibold pt-2">Add to Cart</h4>
