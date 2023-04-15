@@ -107,6 +107,7 @@
                     }?>
                 </table>
                 <div class="mt-12 text-center">
+                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Save to Quick Order</a>
                     <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Pick-up</a>
                 <a class="show-delivery inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Delivery</a>
                 <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Cancel</a>
