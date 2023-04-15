@@ -76,7 +76,7 @@
                 ?>
                     <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
                         <div class="flex flex-col items-center py-5">
-                            <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/nivialotion.png"
+                            <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/N95.png"
                                 alt="Bonnie image" />
                             <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><?php echo $row['medicine_name'] ?></h5>
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['dosage'] ?>mgf</span>
