@@ -85,8 +85,9 @@
 
                             <!-- Hellow -->
                             <!-- <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?> </span> -->
-                            <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span>
-                            <script>
+                            <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity">
+                            <!-- <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span> -->
+                            <!-- <script>
                                 function totalClick(click) {
                                   const totalClicks=document.getElementById('totalClicks');
                                   const sumvalue=parseInt(totalClicks.innerText)+click;
@@ -96,7 +97,7 @@
                                     totalClicks.innerText=0;
                                   }  
                                 }
-                            </script>
+                            </script> -->
                             <!-- Hellow -->
                             <!-- hellow -->
                             <div class="flex mt-4">
