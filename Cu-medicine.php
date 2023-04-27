@@ -83,10 +83,11 @@
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['dosage'] ?>mgf</span>
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['type'] ?></span>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Price : <?php echo $row['sell_price'] ?></span>
+                            <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity">
                               <!-- Hellow -->
                             <!-- <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?> </span> -->
-                            <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span>
-                            <script>
+                            <!-- <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span> -->
+                            <!-- <script>
                                 function totalClick(click) {
                                   const totalClicks=document.getElementById('totalClicks');
                                   const sumvalue=parseInt(totalClicks.innerText)+click;
@@ -96,7 +97,7 @@
                                     totalClicks.innerText=0;
                                   }  
                                 }
-                            </script>
+                            </script> -->
                             <div class="flex mt-4">
                                 <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</a>   
                             </div>

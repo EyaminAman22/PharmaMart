@@ -17,7 +17,7 @@
         rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Settings</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/all.min.css">
     <script src="js/tailwind.config.js"></script>
@@ -70,43 +70,26 @@
                 <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
                 <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
             </div>
-            
-            <div class="flex mt-2 ml-16 justify-start flex-wrap gap-8">
-                <?php
-                while($row = mysqli_fetch_assoc($result)){
-                ?>
-                    <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
-                        <div class="flex flex-col items-center py-5">
-                            <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/napa.jpg"
-                                alt="Bonnie image" />
-                            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><?php echo $row['medicine_name'] ?></h5>
-                            <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['dosage'] ?>mgf</span>
-                            <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['type'] ?></span>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Price : <?php echo $row['sell_price'] ?></span>
-                            <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity">
-                              <!-- Hellow -->
-                            <!-- <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?> </span> -->
-                            <!-- <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span> -->
-                            <!-- <script>
-                                function totalClick(click) {
-                                  const totalClicks=document.getElementById('totalClicks');
-                                  const sumvalue=parseInt(totalClicks.innerText)+click;
-                                  console.log(sumvalue+click);
-                                  totalClicks.innerText=sumvalue;
-                                  if(sumvalue<0){
-                                    totalClicks.innerText=0;
-                                  }  
-                                }
-                            </script> -->
-                            
-                            <div class="flex mt-4">
-                                <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</a>   
-                            </div>
+            <div class=" mt-5 text-center"> 
+                <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy mb-8">Profile Information</h1>
+                <form class="rounded-xl w-1/2 align-center text-center mx-auto justify-center bg-navy text-white flex flex-col gap-8 py-8 px-56">
+                   
+                    <input class="h-[40px] block rounded-xl outline outline-1" type="text" placeholder="  User Name" name = "cname">
+                    <input class=" h-[40px]  block rounded-xl outline outline-1" type="number" placeholder="  Phone Number" name = "phone">
+    
+                    <input class=" h-[40px]  block rounded-xl outline outline-1" type="password" placeholder="  Password" name = "pass"> 
+                </form>
+               
+                        <div class="flex justify-center items-center w-100 border-t p-3 space-x-3">
+                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a>
+                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out close-pickup" href="#">Cancel</a>
                         </div>
-                    </div>
-                <?php } ?>
+                 
+               
+                
+               
+                
             </div>
-
         </div>
 </body>
 

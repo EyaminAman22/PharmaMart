@@ -17,7 +17,7 @@
         rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add to Cart</title>
+    <title>Quick Orders</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/all.min.css">
     <script src="js/tailwind.config.js"></script>
@@ -107,10 +107,9 @@
                     }?>
                 </table>
                 <div class="mt-12 text-center">
-                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out " href="#">Save to Quick Order</a>
                     <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Pick-up</a>
                 <a class="show-delivery inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Delivery</a>
-                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Cancel</a>
+                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Delete</a>
                 </div>
                 <div class="pickup py-48 h-screen w-full fixed left-0 top-0 flex justify-center items bg-black bg-opacity-50 hidden">
                     <div class="bg-white rounded shadow-lg h-48 w-1/3">

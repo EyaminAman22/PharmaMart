@@ -97,31 +97,58 @@
     <div class="flex p-5 pt-12 justify-around">
         <a href="Cu-cart.php">
             <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
-                <img class=" w-36" src="images/addcart.png" alt="">
+                <img class=" w-24" src="images/addcart.png" alt="">
                 <h4 class="text-white text-20 font-semibold pt-2">Add to Cart</h4>
             </div>
         </a>
-            <a href="">
+            <a href="" class="show-prescription">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
-                    <img class=" w-36" src="images/prescription.png" alt="">
+                    <img class=" w-24" src="images/prescription.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Prescription</h4>
                 </div>
             </a>
             <a href="">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
-                    <img class=" w-36" src="images/track.png" alt="">
+                    <img class=" w-24" src="images/track.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Let's Track</h4>
                 </div>
             </a>
-            <a href="">
+            <a href="Cu-quickorder.php">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
-                    <img class=" w-36" src="images/checklist.png" alt="">
+                    <img class=" w-24" src="images/checklist.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Quick Order</h4>
                 </div>
+                <!-- asas -->
+                <div class="prescription py-48 h-screen w-full fixed left-0 top-0 flex justify-center items bg-black bg-opacity-50 hidden">
+                    <div class="bg-white rounded shadow-lg h-48 w-1/3">
+                        <div class="border-b px-4 py-2">
+                            <h3 class="font-semibold text-lg">An address will sent to your mobile number.</h3>
+                        </div>
+                        <div class="p-3">
+                            A transaction ID will be sent to your Mobile Number.
+                        </div>
+                        <div class="flex justify-end items-center w-100 border-t p-3 space-x-3">
+                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a>
+                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out close-prescription" href="#">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    const prescription=document.querySelector('.prescription');
+                    const showprescription=document.querySelector('.show-prescription');
+                    const closeprescription=document.querySelector('.close-prescription');
+                    showprescription.addEventListener('click',function(){
+                        prescription.classList.remove('hidden')
+                    });
+                    closeprescription.addEventListener('click',function(){
+                        prescription.classList.add('hidden')
+                    });
+                </script>
+                <!-- asfas -->
             </a>
-            <a href="">
+            <a href="Cu-settings.php">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
-                    <img class=" w-36" src="images/settings.png" alt="">
+                    <img class=" w-24" src="images/settings.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Settings</h4>
                 </div>
             </a>
