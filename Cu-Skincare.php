@@ -1,15 +1,12 @@
 <?php
     session_start();
     include('db_connect.php');
-
-    $sql = "SELECT* FROM medicine WHERE category LIKE 'suplement&vitamin'";
+    $sql = "SELECT* FROM medicine WHERE category LIKE 'skincare'";
     $result = mysqli_query($conn,$sql);
-
     
 ?>
 <!doctype html>
 <html>
-
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +18,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/all.min.css">
     <script src="js/tailwind.config.js"></script>
-
-
 </head>
-
 <body class="m-0 p-0 font-pop">
     <div class="flex">
         <div class="w-1/5 bg-navy text-white font-semibold text-center pt-4">
@@ -82,10 +76,12 @@
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['dosage'] ?>mgf</span>
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['type'] ?></span>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Price : <?php echo $row['sell_price'] ?></span>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?></span>
-                            <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity">
-                              <!-- Hellow -->
+
+                            <!-- Hellow -->
                             <!-- <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?> </span> -->
+                            <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span>
+                            <script>
+                            <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity">
                             <!-- <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span> -->
                             <!-- <script>
                                 function totalClick(click) {
@@ -97,16 +93,17 @@
                                     totalClicks.innerText=0;
                                   }  
                                 }
+                            </script>
                             </script> -->
+                            <!-- Hellow -->
+                            <!-- hellow -->
                             <div class="flex mt-4">
-                                <a href="Cu-cart.php" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</a>   
+                                <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</a>   
                             </div>
                         </div>
                     </div>
                 <?php } ?>
             </div>
         </div>
-    </div>
 </body>
-
 </html>
