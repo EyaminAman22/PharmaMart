@@ -2,35 +2,14 @@
     session_start();
     include('db_connect.php');
     $customer_id = $_SESSION['customer_id'];
-    if(isset ($_GET['id'])){
-       $md_name = mysqli_real_escape_string($conn, $_GET['id']);
-       $sql = "SELECT * FROM medicine WHERE medicine_name LIKE '$md_name'";
-       $result = mysqli_query($conn, $sql);
-       $details = mysqli_fetch_assoc($result);
-       $provider_id = $details['provider_id'];
-       $company_id = $details['company_id'];
-       $price = $details['sell_price'];
-       $i = 0;
-       #$qu = $_POST['qu'];
-       if(empty($qu)){
-        $qu = 1;
-       }
-       $tp = $qu*$price;
-       
-       $insert = "INSERT INTO cucart (customer_id,provider_id,company_id,product_name,quantity,price,total_price) 
-                    VALUES ('$customer_id','$provider_id', '$company_id', '$md_name', '$qu', '$price','$tp')";
-
-        if(mysqli_query($conn,$insert)){
-            echo "ADD DONE";
-        }
-        $sql_2 = mysqli_query($conn, "SELECT SUM(price) as total FROM cucart WHERE customer_id = $customer_id");
-        $row2 = mysqli_fetch_assoc($sql_2); 
-    }
+    
     
     $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id";
-    $result1 = mysqli_query($conn,$sql1);
-
-
+    $result = mysqli_query($conn,$sql1);
+    
+    $sql_2 = mysqli_query($conn, "SELECT SUM(price) as total FROM cucart WHERE customer_id = $customer_id");
+    $row2 = mysqli_fetch_assoc($sql_2); 
+    $i = 0;
 ?>
 <!doctype html>
 <html>
@@ -110,26 +89,26 @@
                     </thead>
                     <?php
                     while($row = mysqli_fetch_assoc($result)){
+                        $i++;
                     ?>
                         <tbody class="">
                             <tr class="">
-                                <td class="p-2 border  border-white"><?php echo $row['id']?></td>
+                                <td class="p-2 border  border-white"><?php echo $i;?></td>
                                 <td class="p-2 border  border-white">---</td>
-                                <td class="p-2 border  border-white"><?php echo $row['first_name']?></td>
-                            <td class="p-2 border  border-white"><?php echo $row['phone']?></td>
-                            <td class="p-2 border  border-white"><?php echo $row['salary']?></td>
+                                <td class="p-2 border  border-white"><?php echo $row['product_name']?></td>
+                            <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
+                            <td class="p-2 border  border-white"><?php echo $row['price']?></td>
                             <td class="p-2 border  border-white space-3 gap-y-2">
                                 <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Remove</a>
                             </td>
                             </tr>
-                            <tr>
-                                <td class="p-2 border  border-white" colspan="4">Total Price</td>
-                                <td class="p-2 border  border-white">----</td>
-                            </tr>
-                        </tbody>
-                        
                     <?php
                     }?>
+                            <tr>
+                                <td class="p-2 border  border-white" colspan="4">Total Price</td>
+                                <td class="p-2 border  border-white"><?php echo $row2['total'] ?></td>
+                            </tr>
+                        </tbody>
                 </table>
                 <div class="mt-12 text-center">
                 <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Save to Quick Order</a>
