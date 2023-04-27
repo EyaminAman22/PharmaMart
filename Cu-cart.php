@@ -1,9 +1,34 @@
 <?php
     session_start();
     include('db_connect.php');
+    $customer_id = $_SESSION['customer_id'];
+    if(isset ($_GET['id'])){
+       $md_name = mysqli_real_escape_string($conn, $_GET['id']);
+       $sql = "SELECT * FROM medicine WHERE medicine_name LIKE '$md_name'";
+       $result = mysqli_query($conn, $sql);
+       $details = mysqli_fetch_assoc($result);
+       $provider_id = $details['provider_id'];
+       $company_id = $details['company_id'];
+       $price = $details['sell_price'];
+       $i = 0;
+       #$qu = $_POST['qu'];
+       if(empty($qu)){
+        $qu = 1;
+       }
+       $tp = $qu*$price;
+       
+       $insert = "INSERT INTO cucart (customer_id,provider_id,company_id,product_name,quantity,price,total_price) 
+                    VALUES ('$customer_id','$provider_id', '$company_id', '$md_name', '$qu', '$price','$tp')";
 
-    $sql = "SELECT* FROM medicine WHERE category LIKE 'Baby care'";
-    $result = mysqli_query($conn,$sql);
+        if(mysqli_query($conn,$insert)){
+            echo "ADD DONE";
+        }
+        $sql_2 = mysqli_query($conn, "SELECT SUM(price) as total FROM cucart WHERE customer_id = $customer_id");
+        $row2 = mysqli_fetch_assoc($sql_2); 
+    }
+    
+    $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id";
+    $result1 = mysqli_query($conn,$sql1);
 
     
 ?>
@@ -70,102 +95,110 @@
                 <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
                 <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
             </div>
-            <div class=" mt-5 text text-center"> 
-                <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy">Items</h1>
-                <table class=" mt-4 table-auto text-center mx-auto bg-navy text-white border  border-white border-collapse">
-                    <thead>
-                        <tr class="">
-                            <th class="p-2 border  border-white">SL No.</th>
-                            <th class="p-2 border  border-white">Image</th>
-                            <th class="p-2 border  border-white">Item Name</th>
-                            <th class="p-2 border  border-white">Quantity</th>
-                            <th class="p-2 border  border-white">Price</th>
-                            <th class="p-2 border  border-white">Operation</th>
-                        </tr>
-                    </thead>
-                    <?php
-                    while($row = mysqli_fetch_assoc($result)){
-                    ?>
-                        <tbody class="">
+                <div class=" mt-5 text text-center"> 
+                
+                    <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy">Items</h1>
+                    <table class=" mt-4 table-auto text-center mx-auto bg-navy text-white border  border-white border-collapse">
+                        <thead>
                             <tr class="">
-                                <td class="p-2 border  border-white"><?php echo $row['id']?></td>
-                                <td class="p-2 border  border-white">---</td>
-                                <td class="p-2 border  border-white"><?php echo $row['first_name']?></td>
-                            <td class="p-2 border  border-white"><?php echo $row['phone']?></td>
-                            <td class="p-2 border  border-white"><?php echo $row['salary']?></td>
-                            <td class="p-2 border  border-white space-3 gap-y-2">
-                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Remove</a>
-                            </td>
+                                <th class="p-2 border  border-white">SL No.</th>
+                                <th class="p-2 border  border-white">Image</th>
+                                <th class="p-2 border  border-white">Item Name</th>
+                                <th class="p-2 border  border-white">Quantity</th>
+                                <th class="p-2 border  border-white">Price</th>
+                                <th class="p-2 border  border-white">Operation</th>
                             </tr>
-                            <tr>
-                                <td class="p-2 border  border-white" colspan="4">Total Price</td>
-                                <td class="p-2 border  border-white">----</td>
-                            </tr>
-                        </tbody>
+                        </thead>
+                        <?php
+                        while($row = mysqli_fetch_assoc($result1)){
+                            $i++;
+                        ?>
+                            <tbody class="">
+                                <tr class="">
+                                    <td class="p-2 border  border-white"><?php echo $i?></td>
+                                    <td class="p-2 border  border-white">---</td>
+                                    <td class="p-2 border  border-white"><?php echo $row['product_name'] ?></td>
+                                    <td class="p-2 border  border-white">
+                                        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method = "POST">
+                                            <input type="text" class="w-2/3 rounded-lg text-center" placeholder="1" name = "qu"> 
+                                        </from>
+                                    </td>                          
+                                <td class="p-2 border  border-white"><?php echo $row['price']?></td>
+                                <td class="p-2 border  border-white space-3 gap-y-2">
+                                    <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Remove</a>
+                                </td>
+                                </tr>
+                                <?php
+                        }?>
+                                <tr>
+                                    <td class="p-2 border  border-white" colspan="4">Total Price</td>
+                                    <td class="p-2 border  border-white"><?php echo $row2['total']?></td>
+                                </tr>
+                            </tbody>
+                            
                         
-                    <?php
-                    }?>
-                </table>
-                <div class="mt-12 text-center">
-                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Save to Quick Order</a>
-                    <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Pick-up</a>
-                <a class="show-delivery inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Delivery</a>
-                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Cancel</a>
-                </div>
-                <div class="pickup py-48 h-screen w-full fixed left-0 top-0 flex justify-center items bg-black bg-opacity-50 hidden">
-                    <div class="bg-white rounded shadow-lg h-48 w-1/3">
-                        <div class="border-b px-4 py-2">
-                            <h3 class="font-semibold text-lg">An address will sent to your mobile number.</h3>
-                        </div>
-                        <div class="p-3">
-                            A transaction ID will be sent to your Mobile Number.
-                        </div>
-                        <div class="flex justify-end items-center w-100 border-t p-3 space-x-3">
-                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a>
-                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out close-pickup" href="#">Cancel</a>
+                    </table>
+                    <div class="mt-12 text-center">
+                    <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Save to Quick Order</a>
+                        <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Pick-up</a>
+                    <a class="show-delivery inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Delivery</a>
+                    <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Cancel</a>
+                    </div>
+                    <div class="pickup py-48 h-screen w-full fixed left-0 top-0 flex justify-center items bg-black bg-opacity-50 hidden">
+                        <div class="bg-white rounded shadow-lg h-48 w-1/3">
+                            <div class="border-b px-4 py-2">
+                                <h3 class="font-semibold text-lg">An address will sent to your mobile number.</h3>
+                            </div>
+                            <div class="p-3">
+                                A transaction ID will be sent to your Mobile Number.
+                            </div>
+                            <div class="flex justify-end items-center w-100 border-t p-3 space-x-3">
+                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a>
+                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out close-pickup" href="#">Cancel</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="delivery py-48 h-screen w-full fixed left-0 top-0 flex justify-center items bg-black bg-opacity-50 hidden">
-                    <div class="bg-white rounded shadow-lg h-48 w-1/3">
-                        <div class="border-b px-4 py-2">
-                            <h3 class="font-semibold text-lg">Your delivery Charge will be 45tk</h3>
-                        </div>
-                        <div class="p-3">
-                            A transaction ID will be sent to your Mobile Number.
-                            <form class="" action="">
-                                <input class="py-2 w-4/5" type="text" placeholder=" Please Type your Address!">
-                            </form>
-                        </div>
-                        <div class="flex justify-end items-center w-100 border-t p-3 space-x-3">
-                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a>
-                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out close-delivery" href="#">Cancel</a>
+                    <div class="delivery py-48 h-screen w-full fixed left-0 top-0 flex justify-center items bg-black bg-opacity-50 hidden">
+                        <div class="bg-white rounded shadow-lg h-48 w-1/3">
+                            <div class="border-b px-4 py-2">
+                                <h3 class="font-semibold text-lg">Your delivery Charge will be 45tk</h3>
+                            </div>
+                            <div class="p-3">
+                                A transaction ID will be sent to your Mobile Number.
+                                <form class="" action="">
+                                    <input class="py-2 w-4/5" type="text" placeholder=" Please Type your Address!">
+                                </form>
+                            </div>
+                            <div class="flex justify-end items-center w-100 border-t p-3 space-x-3">
+                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a>
+                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out close-delivery" href="#">Cancel</a>
+                            </div>
                         </div>
                     </div>
+                    
+                    <script>
+                        const pickup=document.querySelector('.pickup');
+                        const showpickup=document.querySelector('.show-pickup');
+                        const closepickup=document.querySelector('.close-pickup');
+                        showpickup.addEventListener('click',function(){
+                            pickup.classList.remove('hidden')
+                        });
+                        closepickup.addEventListener('click',function(){
+                            pickup.classList.add('hidden')
+                        });
+                        const delivery=document.querySelector('.delivery');
+                        const showdelivery=document.querySelector('.show-delivery');
+                        const closedelivery=document.querySelector('.close-delivery');
+                        showdelivery.addEventListener('click',function(){
+                            delivery.classList.remove('hidden')
+                        });
+                        closedelivery.addEventListener('click',function(){
+                            delivery.classList.add('hidden')
+                        });
+                    </script>
+                    
                 </div>
                 
-                <script>
-                    const pickup=document.querySelector('.pickup');
-                    const showpickup=document.querySelector('.show-pickup');
-                    const closepickup=document.querySelector('.close-pickup');
-                    showpickup.addEventListener('click',function(){
-                        pickup.classList.remove('hidden')
-                    });
-                    closepickup.addEventListener('click',function(){
-                        pickup.classList.add('hidden')
-                    });
-                    const delivery=document.querySelector('.delivery');
-                    const showdelivery=document.querySelector('.show-delivery');
-                    const closedelivery=document.querySelector('.close-delivery');
-                    showdelivery.addEventListener('click',function(){
-                        delivery.classList.remove('hidden')
-                    });
-                    closedelivery.addEventListener('click',function(){
-                        delivery.classList.add('hidden')
-                    });
-                </script>
-                
-            </div>
         </div>
 </body>
 

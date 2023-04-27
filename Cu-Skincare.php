@@ -5,7 +5,6 @@
     $sql = "SELECT* FROM medicine WHERE category LIKE 'skincare'";
     $result = mysqli_query($conn,$sql);
 
-    
 ?>
 <!doctype html>
 <html>
@@ -70,7 +69,9 @@
                 <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
                 <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
             </div>
+            
             <div class="flex mt-2 ml-16 justify-start flex-wrap gap-8">
+            
                 <?php
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
@@ -85,7 +86,9 @@
 
                             <!-- Hellow -->
                             <!-- <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?> </span> -->
-                            <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity">
+                            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method = "POST">
+                                <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity" name = "qu">
+                            </form>
                             <!-- <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span> -->
                             <!-- <script>
                                 function totalClick(click) {
@@ -101,7 +104,7 @@
                             <!-- Hellow -->
                             <!-- hellow -->
                             <div class="flex mt-4">
-                                <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</a>   
+                                <a href="Cu-cart.php?id=<?php echo $row['medicine_name']?>" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</a>
                             </div>
                         </div>
                     </div>
