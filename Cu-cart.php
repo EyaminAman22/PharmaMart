@@ -1,12 +1,40 @@
 <?php
     session_start();
     include('db_connect.php');
-    $sql = "SELECT* FROM medicine WHERE category LIKE 'Baby care'";
-    $result = mysqli_query($conn,$sql);
+    $customer_id = $_SESSION['customer_id'];
+    if(isset ($_GET['id'])){
+       $md_name = mysqli_real_escape_string($conn, $_GET['id']);
+       $sql = "SELECT * FROM medicine WHERE medicine_name LIKE '$md_name'";
+       $result = mysqli_query($conn, $sql);
+       $details = mysqli_fetch_assoc($result);
+       $provider_id = $details['provider_id'];
+       $company_id = $details['company_id'];
+       $price = $details['sell_price'];
+       $i = 0;
+       #$qu = $_POST['qu'];
+       if(empty($qu)){
+        $qu = 1;
+       }
+       $tp = $qu*$price;
+       
+       $insert = "INSERT INTO cucart (customer_id,provider_id,company_id,product_name,quantity,price,total_price) 
+                    VALUES ('$customer_id','$provider_id', '$company_id', '$md_name', '$qu', '$price','$tp')";
+
+        if(mysqli_query($conn,$insert)){
+            echo "ADD DONE";
+        }
+        $sql_2 = mysqli_query($conn, "SELECT SUM(price) as total FROM cucart WHERE customer_id = $customer_id");
+        $row2 = mysqli_fetch_assoc($sql_2); 
+    }
     
+    $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id";
+    $result1 = mysqli_query($conn,$sql1);
+
+
 ?>
 <!doctype html>
 <html>
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +46,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/all.min.css">
     <script src="js/tailwind.config.js"></script>
+
+
 </head>
+
 <body class="m-0 p-0 font-pop">
     <div class="flex">
         <div class="w-1/5 bg-navy text-white font-semibold text-center pt-4">
