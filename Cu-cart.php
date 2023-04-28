@@ -7,7 +7,7 @@
     $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id";
     $result = mysqli_query($conn,$sql1);
     
-    $sql_2 = mysqli_query($conn, "SELECT SUM(price) as total FROM cucart WHERE customer_id = $customer_id");
+    $sql_2 = mysqli_query($conn, "SELECT SUM(total_price) as total FROM cucart WHERE customer_id = $customer_id");
     $row2 = mysqli_fetch_assoc($sql_2); 
     $i = 0;
 ?>
@@ -97,7 +97,7 @@
                                 <td class="p-2 border  border-white">---</td>
                                 <td class="p-2 border  border-white"><?php echo $row['product_name']?></td>
                             <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
-                            <td class="p-2 border  border-white"><?php echo $row['price']?></td>
+                            <td class="p-2 border  border-white"><?php echo $row['total_price']?></td>
                             <td class="p-2 border  border-white space-3 gap-y-2">
                                 <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Remove</a>
                             </td>

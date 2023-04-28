@@ -71,36 +71,21 @@
                 <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
             </div>
             <div class="flex mt-2 ml-16 justify-start flex-wrap gap-8">
-                <?php
+            <?php
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
                     <div class="w-1/6 border duration-700 ease-in-out rounded-lg shadow bg-navy hover:bg-li-navy">
                         <div class="flex flex-col items-center py-5">
-                            <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/N95.png"
+                            <img class="block w-36 h-36 mb-3 shadow-lg" src="./images/nivialotion.png"
                                 alt="Bonnie image" />
                             <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><?php echo $row['medicine_name'] ?></h5>
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['dosage'] ?>mgf</span>
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['type'] ?></span>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Price : <?php echo $row['sell_price'] ?></span>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?></span>
-                            <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity">
-                              <!-- Hellow -->
-                            <!-- <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?> </span> -->
-                            <!-- <span class="text-3xl px-4 text-gray-500 dark:text-gray-400"><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(-1)">-</button><span class="mx-3" id="totalClicks" > 0 </span><button class="text-2xl text-white outline outline-1 duration-700 ease-in-out outline-white hover:bg-white hover:text-black px-2" onclick="totalClick(1)">+</button> </span> -->
-                            <!-- <script>
-                                function totalClick(click) {
-                                  const totalClicks=document.getElementById('totalClicks');
-                                  const sumvalue=parseInt(totalClicks.innerText)+click;
-                                  console.log(sumvalue+click);
-                                  totalClicks.innerText=sumvalue;
-                                  if(sumvalue<0){
-                                    totalClicks.innerText=0;
-                                  }  
-                                }
-                            </script> -->
-                            <div class="flex mt-4">
-                                <a href="Cu-cart.php" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</a>   
-                            </div>
+                            <form method = "POST" action="cu-add_cart.php?name=<?php echo $row['medicine_name']; ?>">
+                                <input type="text" class="w-2/3 rounded-lg text-center form-control" placeholder="  Quantity" name = "qu">
+                                <input type = "submit" class = "btn btn-lg btn-primary" value = "Add to Cart">
+                            </form>
                         </div>
                     </div>
                 <?php } ?>
