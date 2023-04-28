@@ -13,8 +13,8 @@
        $price = $details['sell_price'];
        $tp = $quantity*$price;
 
-       $insert = "INSERT INTO cucart(customer_id,provider_id,company_id,product_name,quantity,price,total_price) 
-                    VALUES ('$customer_id','$provider_id', '$company_id', '$md_name', '$quantity', '$price','$tp')";
+       $insert = "INSERT INTO cucart(customer_id,provider_id,company_id,product_name,quantity,price,total_price,status) 
+                    VALUES ('$customer_id','$provider_id', '$company_id', '$md_name', '$quantity', '$price','$tp','order')";
         
        if(mysqli_query($conn,$insert)){
             header("location:Cu-cart.php");
