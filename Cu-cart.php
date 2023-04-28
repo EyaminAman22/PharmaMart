@@ -3,9 +3,12 @@
     include('db_connect.php');
     $customer_id = $_SESSION['customer_id'];
 
+    if(isset($_GET['msg'])){
+        echo $_GET['msg'];
+    }
     if(isset($_GET['action'])){
         $address = $_POST['address'];
-        echo $address;
+        
         $sql3 = mysqli_query($conn, "UPDATE cucart SET status = 'pending', address = '$address' WHERE customer_id = $customer_id && status LIKE 'order'");
         
     }

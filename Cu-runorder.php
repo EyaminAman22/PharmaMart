@@ -1,15 +1,15 @@
 <?php
     session_start();
     include('db_connect.php');
-    // $customer_id = $_SESSION['customer_id'];
+    $customer_id = $_SESSION['customer_id'];
     
     
-    // $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id";
-    // $result = mysqli_query($conn,$sql1);
+     $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id && status LIKE 'pending'";
+     $result = mysqli_query($conn,$sql1);
     
-    // $sql_2 = mysqli_query($conn, "SELECT SUM(total_price) as total FROM cucart WHERE customer_id = $customer_id");
-    // $row2 = mysqli_fetch_assoc($sql_2); 
-    // $i = 0;
+     $sql_2 = mysqli_query($conn, "SELECT SUM(total_price) as total FROM cucart WHERE customer_id = $customer_id && status LIKE 'pending'");
+     $row2 = mysqli_fetch_assoc($sql_2); 
+     $i = 0;
 ?>
 <!doctype html>
 <html>
@@ -84,7 +84,6 @@
                             <th class="p-2 border  border-white">Item Name</th>
                             <th class="p-2 border  border-white">Quantity</th>
                             <th class="p-2 border  border-white">Price</th>
-                            <th class="p-2 border  border-white">Operation</th>
                         </tr>
                     </thead>
                     <?php
@@ -98,9 +97,6 @@
                                 <td class="p-2 border  border-white"><?php echo $row['product_name']?></td>
                             <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
                             <td class="p-2 border  border-white"><?php echo $row['total_price']?></td>
-                            <td class="p-2 border  border-white space-3 gap-y-2">
-                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Remove</a>
-                            </td>
                             </tr>
                     <?php
                     }?>
@@ -110,10 +106,7 @@
                             </tr>
                         </tbody>
                 </table>
-                <div class="mt-12 text-center">
-                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out " href="#">Proceed</a>
-                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Cancel</a>
-                </div>
+                
                 <!-- <script>
                     const pickup=document.querySelector('.pickup');
                     const showpickup=document.querySelector('.show-pickup');
