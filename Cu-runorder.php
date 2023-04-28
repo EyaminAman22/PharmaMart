@@ -36,14 +36,33 @@
             <i class="fa-solid fa-user text-white text-[100px]"></i>
             <nav class="">
             <ul class="flex pt-10 flex-col text-20">
-                    <a href="index.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
-                    <a href="employee.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
-                    <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Products</li></a>
-                    <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
-                    <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
-                    <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
-                    <a href="Pro-Cart.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li></a>
-                </ul>
+                <a href="CustomerDashboard.php">
+                    <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li>
+                </a>
+                <a href="Cu-medicine.php">
+                    <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Medicine</li>
+                </a>
+                <a href="Cu-surgicalEquipment.php">
+                    <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Surgical Equipment
+                    </li>
+                </a>
+                <a href="Cu-healthcare.php">
+                    <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Health Care
+                        products</li>
+                </a>
+                <a href="Cu-Skincare.php">
+                    <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Skin Care Products
+                    </li>
+                </a>
+                <a href="Cu-babycare.php">
+                    <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Baby Care Products
+                    </li>
+                </a>
+                <a href="Cu-Supplyment&Vitamin.php">
+                    <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Food Supplyment and
+                        Vitamins</li>
+                </a>
+            </ul>
             </nav>
             <h2 class="pt-14 pb-1.5">Helpline</h2>
             <h3 class="pt-2 pb-20">+880 20134-173959</h3>
