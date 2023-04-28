@@ -84,13 +84,14 @@
                     <h4 class="text-white text-20 font-semibold pt-2">Monthly Sales</h4>
                 </div>
             </a>
+
             <a href="Pro-order.php">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                     <img class=" w-36" src="images/order.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Check Orders</h4>
                 </div>
             </a>
-            <a href="provider-cart.php">
+            <a href="provider-cart.html">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                     <img class=" w-36" src="images/cart.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Add to Cart</h4>
