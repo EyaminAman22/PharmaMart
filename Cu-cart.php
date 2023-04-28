@@ -2,14 +2,22 @@
     session_start();
     include('db_connect.php');
     $customer_id = $_SESSION['customer_id'];
+
+    if(isset($_GET['action'])){
+        $address = $_POST['address'];
+        echo $address;
+        $sql3 = mysqli_query($conn, "UPDATE cucart SET status = 'pending', address = '$address' WHERE customer_id = $customer_id && status LIKE 'order'");
+        
+    }
     
-    
-    $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id";
+    $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id && status LIKE 'order'";
     $result = mysqli_query($conn,$sql1);
     
-    $sql_2 = mysqli_query($conn, "SELECT SUM(total_price) as total FROM cucart WHERE customer_id = $customer_id");
+    $sql_2 = mysqli_query($conn, "SELECT SUM(total_price) as total FROM cucart WHERE customer_id = $customer_id && status LIKE 'order'");
     $row2 = mysqli_fetch_assoc($sql_2); 
     $i = 0;
+
+    
 ?>
 <!doctype html>
 <html>
@@ -138,13 +146,15 @@
                         </div>
                         <div class="p-3">
                             A transaction ID will be sent to your Mobile Number.
-                            <form class="" action="">
-                                <input class="py-2 w-4/5" type="text" placeholder=" Please Type your Address!">
-                            </form>
+                            <form method="POST" action="Cu-cart.php?action=proceed">
+                                <input class="py-2 w-4/5 form-control" type="text" placeholder=" Please Type your Address!" name="address">
+                            
                         </div>
                         <div class="flex justify-end items-center w-100 border-t p-3 space-x-3">
-                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a>
+                        <!--    <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a> -->
+                                <input type = "submit" class = "btn btn-lg btn-primary" value = "Proceed">
                             <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out close-delivery" href="#">Cancel</a>
+                            </form>
                         </div>
                     </div>
                 </div>
