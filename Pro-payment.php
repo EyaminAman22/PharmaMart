@@ -35,13 +35,14 @@
             <h3 class="text-4xl pb-5">Pharma Mart</h3>
             <i class="fa-solid fa-user text-white text-[100px]"></i>
             <nav class="">
-            <ul class="flex pt-10 flex-col text-20">
+                <ul class="flex pt-10 flex-col text-20">
                     <a href="index.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
                     <a href="employee.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
                     <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Products</li></a>
                     <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
                     <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
                     <a href="Pro-revenue.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
+                    
                 </ul>
             </nav>
             <h2 class="pt-14 pb-1.5">Helpline</h2>
@@ -55,16 +56,14 @@
                 <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
             </div>
             <div class=" mt-5 text text-center"> 
-                <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy">Items</h1>
+                <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy">Payment List</h1>
                 <table class=" mt-4 table-auto text-center mx-auto bg-navy text-white border  border-white border-collapse">
                     <thead>
                         <tr class="">
                             <th class="p-2 border  border-white">SL No.</th>
-                            <th class="p-2 border  border-white">Image</th>
-                            <th class="p-2 border  border-white">Item Name</th>
-                            <th class="p-2 border  border-white">Quantity</th>
-                            <th class="p-2 border  border-white">Price</th>
-                            <th class="p-2 border  border-white">Operation</th>
+                            <th class="p-2 border  border-white">Customer Name</th>
+                            <th class="p-2 border  border-white">Date</th>
+                            <th class="p-2 border  border-white">Expense</th>
                         </tr>
                     </thead>
                     <?php
@@ -74,46 +73,15 @@
                         <tbody class="">
                             <tr class="">
                                 <td class="p-2 border  border-white"><?php echo $i;?></td>
-                                <td class="p-2 border  border-white">---</td>
                                 <td class="p-2 border  border-white"><?php echo $row['product_name']?></td>
-                            <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
+                                <td class="p-2 border  border-white"><?php echo $row['product_name']?></td>
                             <td class="p-2 border  border-white"><?php echo $row['total_price']?></td>
-                            <td class="p-2 border  border-white space-3 gap-y-2">
-                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Remove</a>
-                            </td>
                             </tr>
                     <?php
                     }?>
-                            <tr>
-                                <td class="p-2 border  border-white" colspan="4">Total Price</td>
-                                <td class="p-2 border  border-white"><?php echo $row2['total'] ?></td>
-                            </tr>
                         </tbody>
                 </table>
-                <div class="mt-12 text-center">
-                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out " href="#">Proceed</a>
-                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Cancel</a>
-                </div>
-                <!-- <script>
-                    const pickup=document.querySelector('.pickup');
-                    const showpickup=document.querySelector('.show-pickup');
-                    const closepickup=document.querySelector('.close-pickup');
-                    showpickup.addEventListener('click',function(){
-                        pickup.classList.remove('hidden')
-                    });
-                    closepickup.addEventListener('click',function(){
-                        pickup.classList.add('hidden')
-                    });
-                    const delivery=document.querySelector('.delivery');
-                    const showdelivery=document.querySelector('.show-delivery');
-                    const closedelivery=document.querySelector('.close-delivery');
-                    showdelivery.addEventListener('click',function(){
-                        delivery.classList.remove('hidden')
-                    });
-                    closedelivery.addEventListener('click',function(){
-                        delivery.classList.add('hidden')
-                    });
-                </script> -->
+               
                 
             </div>
         </div>

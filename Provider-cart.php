@@ -35,13 +35,14 @@
             <h3 class="text-4xl pb-5">Pharma Mart</h3>
             <i class="fa-solid fa-user text-white text-[100px]"></i>
             <nav class="">
-            <ul class="flex pt-10 flex-col text-20">
+                <ul class="flex pt-10 flex-col text-20">
                     <a href="index.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
                     <a href="employee.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
                     <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Products</li></a>
                     <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
                     <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
-                    <a href="Pro-revenue.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
+                    <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
+                    <a href="Pro-Cart.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li></a>
                 </ul>
             </nav>
             <h2 class="pt-14 pb-1.5">Helpline</h2>
@@ -55,7 +56,9 @@
                 <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
             </div>
             <div class=" mt-5 text text-center"> 
-                <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy">Items</h1>
+                <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy">Items</h1><br>
+                <input type="text" class="mt-6 mr-[200px] inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy" placeholder="Customer Name">
+                
                 <table class=" mt-4 table-auto text-center mx-auto bg-navy text-white border  border-white border-collapse">
                     <thead>
                         <tr class="">

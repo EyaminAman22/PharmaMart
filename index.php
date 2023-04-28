@@ -25,8 +25,7 @@
                     <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Products</li></a>
                     <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
                     <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
-                    <a href="#"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
-                    <a href="Pro-Cart.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li></a>
+                    <a href="Pro-revenue.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
                 </ul>
             </nav>
             <h2 class="pt-14 pb-1.5">Helpline</h2>
@@ -78,7 +77,7 @@
                     <h4 class="text-white text-20 font-semibold pt-2">Add Products</h4>
                 </div>
             </a>
-            <a href="#">
+            <a href="Pro-sales.php">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                     <img class=" w-36" src="images/sales.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Monthly Sales</h4>
@@ -91,13 +90,13 @@
                     <h4 class="text-white text-20 font-semibold pt-2">Check Orders</h4>
                 </div>
             </a>
-            <a href="provider-cart.html">
+            <a href="provider-cart.php">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                     <img class=" w-36" src="images/cart.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Add to Cart</h4>
                 </div>
             </a>
-            <a href="#">
+            <a href="Pro-payment.php">
                 <div class="block bg-navy text-center rounded-2xl hover:bg-li-navy hover:ease-in py-4 ease-out duration-400 p-5">
                     <img class=" w-36" src="images/payment.png" alt="">
                     <h4 class="text-white text-20 font-semibold pt-2">Payments</h4>
