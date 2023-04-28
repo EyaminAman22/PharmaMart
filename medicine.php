@@ -68,7 +68,7 @@
         ?>
             <tbody class="">
                 <tr class="">
-                    <td class="p-2 border  border-white"><button class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy "><?php echo $row['medicine_name']?></button></td>
+                    <td class="p-2 border  border-white"><button class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy hover:rounded-lg ease-in-out duration-700 "><?php echo $row['medicine_name']?></button></td>
                     <td class="p-2 border  border-white"><?php echo $row['dosage']?></td>
                     <td class="p-2 border  border-white"><?php echo $row['mgf']?></td>
                 <td class="p-2 border  border-white"><?php echo $row['exp']?></td>

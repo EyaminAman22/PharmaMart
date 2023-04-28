@@ -2,11 +2,8 @@
     session_start();
     include('db_connect.php');
     $provider_id = $_SESSION['provider_id'];
-
     $sql = "SELECT* FROM employee WHERE provider_id LIKE '$provider_id'";
     $result = mysqli_query($conn,$sql);
-
-    
 ?>
 <!doctype html>
 <html>
