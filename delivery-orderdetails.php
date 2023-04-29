@@ -35,13 +35,17 @@
             <h3 class="text-4xl pb-5">Pharma Mart</h3>
             <i class="fa-solid fa-user text-white text-[100px]"></i>
             <nav class="">
-                <ul class="flex pt-10 flex-col text-20">
-                    <a href="index.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li></a>
-                    <a href="employee.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Employee</li></a>
-                    <a href="medicine.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Products</li></a>
-                    <a href="company.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Company</li></a>
-                    <a href="invoice.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Invoice</li></a>
-                    <a href="Pro-revenue.php"><li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Monthly Revenue</li></a>
+            <ul class="flex pt-10 flex-col text-20">
+                    <a href="delivery-dashboard.php">
+                        <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li>
+                    </a>
+                    <a href="delivery-order.php">
+                        <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li>
+                    </a>
+                    <a href="delivery-orderdetails.php">
+                        <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Order Details
+                        </li>
+                    </a>
                     
                 </ul>
             </nav>
