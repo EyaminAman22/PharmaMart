@@ -35,18 +35,18 @@
                     <a href="delivery-dashboard.php">
                         <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li>
                     </a>
-                    <a href="delivery-ordertk.php">
+                    <a href="delivery-order.php">
                         <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li>
                     </a>
-                    <a href="delivery-order.php">
+                    <a href="delivery-orderdetails.php">
                         <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Order Details
                         </li>
                     </a>
-                   
+                    
                 </ul>
             </nav>
             <h2 class="pt-14 pb-1.5">Helpline</h2>
-            <h3 class="pt-2 pb-[297px] ">+880 20134-173959</h3>
+            <h3 class="pt-2 pb-56 ">+880 20134-173959</h3>
         </div>
         <div class="w-4/5">
             <div class="w-auto bg-navy flex justify-around p-5 text-white ">
@@ -55,16 +55,40 @@
                 <h1 class="font-semibold text-20 ml-[300px]">Hello, </h1>
                 <a href="Cu-logout.php" class="font-semibold text-20 ml-[50px]">Log Out</a>
             </div>
-               <div class="w-1/3 text-center mx-auto gap-y-12 justify-center mt-12">
-                <div class="mb-12 text-4xl bg-navy text-white p-6 rounded-xl">
-                    <h1 class="font-bold mb-8">Monthly Income</h1>
-                    <h2>45tk</h2>
+            <div class="mt-2 ml-16 mx-auto text-center">
+               <div class="flex mx-auto gap-x-12 justify-center mb-12">
+                <div class="text-4xl bg-navy text-white p-6 rounded-xl">
+                    <h1 class="font-bold mb-8">Drug Store Address</h1>
+                    <h2>153 Karmicheal Road</h2>
                 </div>
                 <div class="text-4xl bg-navy text-white p-6 rounded-xl">
-                    <h1 class="font-bold mb-8">New Order Accept?</h1>
-                    <a class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy hover:rounded-lg ease-in-out duration-700" href="#">Accept</a>
+                    <h1 class="font-bold mb-8">Delivery Address</h1>
+                    <h2>153 Karmicheal Road</h2>
+                </div>
+                <div class="text-4xl bg-navy text-white p-6 rounded-xl">
+                    <h1 class="font-bold mb-8">Phone No.</h1>
+                    <h2>001301231124</h2>
+                </div>
+               </div>
+                
+                    <div class="flex mx-auto gap-x-12 justify-center mb-12">
+                        <div class="text-4xl bg-navy text-white p-6 rounded-xl">
+                            <h1 class="font-bold mb-8">Payment</h1>
+                            <h2>1765TK</h2>
+                            </div>
+                            <div class="text-4xl bg-navy text-white p-6 rounded-xl">
+                                <h1 class="font-bold mb-8">Charge</h1>
+                                <h2>45tk</h2>
+                                </div>
+                    </div>
+                <div class="w-1/3 mx-auto">
+                <div class="text-4xl bg-navy text-white p-6 rounded-xl">
+                    <h1 class="font-bold mb-8">Confirm Order?</h1>
+                    <a class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy hover:rounded-lg ease-in-out duration-700" href="#">Proceed</a>
                 <a class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy hover:rounded-lg ease-in-out duration-700" href="#">Cancel</a>
                 </div>
+            </div>
+            </div>
         </div>
 </body>
 
