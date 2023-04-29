@@ -2,8 +2,13 @@
     session_start();
     include('db_connect.php');
 
-    $sql = "SELECT* FROM medicine WHERE category LIKE 'Baby care'";
-    $result = mysqli_query($conn,$sql);
+    if(isset($_GET['submit'])){
+        $customer_id = $_SESSION['customer_id'];
+        $name = $_GET['cname'];
+        $phone = $_GET['phone'];
+        $pass = $_GET['pass'];
+        $sql = mysqli_query($conn, "UPDATE customer_info SET c_name = '$name',c_phone = '$phone', pass = '$pass'");
+    }
 
     
 ?>
@@ -78,13 +83,12 @@
                     <input class=" h-[40px]  block rounded-xl outline outline-1" type="number" placeholder="  Phone Number" name = "phone">
     
                     <input class=" h-[40px]  block rounded-xl outline outline-1" type="password" placeholder="  Password" name = "pass"> 
-                </form>
+                
                
                         <div class="flex justify-center items-center w-100 border-t p-3 space-x-3">
-                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out" href="#">Proceed</a>
-                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out close-pickup" href="#">Cancel</a>
+                            <input type="submit" class = "btn btn-primary" value = "proceed" name = "submit">
                         </div>
-                 
+                </form>
                
                 
                

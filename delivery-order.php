@@ -57,7 +57,7 @@
             </div>
             <div class="mt-2 ml-16 mx-auto text-center">
                <div class="flex mx-auto gap-x-12 justify-center mb-12">
-                <div class="text-4xl bg-navy text-white p-6 rounded-xl">
+                <div class="text-2xl bg-navy text-white p-6 rounded-xl">
                     <h1 class="font-bold mb-8">Drug Store Address</h1>
                     <h2>153 Karmicheal Road</h2>
                 </div>

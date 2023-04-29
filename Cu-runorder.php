@@ -4,7 +4,7 @@
     $customer_id = $_SESSION['customer_id'];
     
     
-     $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id && status LIKE 'pending'";
+     $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id && status LIKE 'pending' || status LIKE 'sent'";
      $result = mysqli_query($conn,$sql1);
     
      $sql_2 = mysqli_query($conn, "SELECT SUM(total_price) as total FROM cucart WHERE customer_id = $customer_id && status LIKE 'pending'");

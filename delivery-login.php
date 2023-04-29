@@ -18,20 +18,19 @@
         }
 
         if(count($error)==0){
-            $login_info = mysqli_query($conn, "SELECT* FROM providerlogin WHERE username = '$username'");
+            $login_info = mysqli_query($conn, "SELECT* FROM delivery_man WHERE name = '$username'");
 
             if (mysqli_num_rows($login_info) > 0){
             
                 $row = mysqli_fetch_assoc($login_info);
 
-                if ($row['password'] == $pass) 
+                if ($row['pass'] == $pass) 
                 {
-                        $_SESSION['username'] = $username;
-                        $_SESSION['mobile'] = $row['mobile'];
-                        $_SESSION['address'] = $row['address'];
-                        $_SESSION['provider_id'] = $row['userid'];
+                        $_SESSION['dname'] = $username;
+                        $_SESSION['mobile'] = $row['phone'];
+                        $_SESSION['dman_id'] = $row['user_id'];
                         
-                        header('Location: index.php');
+                        header('Location: delivery-dashboard.php');
                     
                 }
                 else 

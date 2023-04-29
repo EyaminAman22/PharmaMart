@@ -1,11 +1,16 @@
 <?php
     session_start();
     include('db_connect.php');
+    $customer_id = $_SESSION['customer_id'];
 
-    $sql = "SELECT* FROM medicine WHERE category LIKE 'Baby care'";
+    if(isset($_GET['order'])){
+        $sql1 = mysqli_query($conn, "UPDATE cucart SET quickorder = 'quick' WHERE status LIKE 'order'");
+    }
+    $sql = "SELECT* FROM cucart WHERE customer_id = $customer_id && quickorder LIKE 'quick'";
     $result = mysqli_query($conn,$sql);
-
-    
+    $i = 0;
+    $sql_2 = mysqli_query($conn, "SELECT SUM(total_price) as total FROM cucart WHERE customer_id = $customer_id && status LIKE 'order' && quickorder LIKE 'quick'");
+    $row2 = mysqli_fetch_assoc($sql_2);
 ?>
 <!doctype html>
 <html>
@@ -85,21 +90,22 @@
                     </thead>
                     <?php
                     while($row = mysqli_fetch_assoc($result)){
+                        $i++;
                     ?>
                         <tbody class="">
                             <tr class="">
-                                <td class="p-2 border  border-white"><?php echo $row['id']?></td>
+                                <td class="p-2 border  border-white"><?php echo $i;?></td>
                                 <td class="p-2 border  border-white">---</td>
-                                <td class="p-2 border  border-white"><?php echo $row['first_name']?></td>
-                            <td class="p-2 border  border-white"><?php echo $row['phone']?></td>
-                            <td class="p-2 border  border-white"><?php echo $row['salary']?></td>
+                                <td class="p-2 border  border-white"><?php echo $row['product_name']?></td>
+                            <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
+                            <td class="p-2 border  border-white"><?php echo $row['total_price']?></td>
                             <td class="p-2 border  border-white space-3 gap-y-2">
                                 <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Remove</a>
                             </td>
                             </tr>
                             <tr>
                                 <td class="p-2 border  border-white" colspan="4">Total Price</td>
-                                <td class="p-2 border  border-white">----</td>
+                                <td class="p-2 border  border-white"><?php echo $row2['total'] ?></td>
                             </tr>
                         </tbody>
                         

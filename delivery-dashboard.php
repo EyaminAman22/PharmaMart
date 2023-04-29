@@ -1,11 +1,11 @@
 <?php
     session_start();
     include('db_connect.php');
-
-    $sql = "SELECT* FROM medicine WHERE category LIKE 'skincare'";
-    $result = mysqli_query($conn,$sql);
-
-    
+    $dman_id = $_SESSION['dman_id'];
+    if(isset($_GET['active'])){
+        $active = $_GET['active'];
+        $sql1 = mysqli_query($conn, "UPDATE delivery_man SET active = '$active' WHERE user_id = '$dman_id'");
+    }
 ?>
 <!doctype html>
 <html>
@@ -35,10 +35,10 @@
                     <a href="delivery-dashboard.php">
                         <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400"> Dash Board</li>
                     </a>
-                    <a href="delivery-ordertk.php">
+                    <a href="delivery-order.php">
                         <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Orders</li>
                     </a>
-                    <a href="delivery-order.php">
+                    <a href="delivery-orderdetails.php">
                         <li class="block  hover:bg-li-navy hover:ease-in py-3 ease-out duration-400">Order Details
                         </li>
                     </a>
@@ -62,8 +62,8 @@
                 </div>
                 <div class="text-4xl bg-navy text-white p-6 rounded-xl">
                     <h1 class="font-bold mb-8">New Order Accept?</h1>
-                    <a class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy hover:rounded-lg ease-in-out duration-700" href="#">Accept</a>
-                <a class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy hover:rounded-lg ease-in-out duration-700" href="#">Cancel</a>
+                    <a class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy hover:rounded-lg ease-in-out duration-700" href="delivery-dashboard.php?active=1">Yes</a>
+                <a class="hover:px-2 hover:py-2 hover:bg-white hover:text-navy hover:rounded-lg ease-in-out duration-700" href="delivery-dashboard.php?active=0">No</a>
                 </div>
         </div>
 </body>
