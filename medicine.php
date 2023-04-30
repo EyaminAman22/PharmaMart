@@ -61,6 +61,7 @@
                 <th class="p-2 border  border-white">Expire Date</th>
                 <th class="p-2 border  border-white">Category</th>
                 <th class="p-2 border  border-white">Quantity</th>
+                <th class="p-2 border  border-white">Amount</th>
                 <th class="p-2 border  border-white">base Price</th>
                 <th class="p-2 border  border-white">Sell price</th>
                 <th class="p-2 border  border-white">Company ID</th>
@@ -78,11 +79,14 @@
                 <td class="p-2 border  border-white"><?php echo $row['exp']?></td>
                 <td class="p-2 border  border-white"><?php echo $row['category']?></td>
                 <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
+                <td class="p-2 border  border-white">
+                    <input type="text" class="w-2/3 rounded-lg text-center form-control" placeholder="  Quantity" name = "qu"> <//?php echo $row['quantity']?>
+                </td>
                 <td class="p-2 border  border-white"><?php echo $row['base_price']?></td>
                 <td class="p-2 border  border-white"><?php echo $row['sell_price']?></td>
                 <td class="p-2 border  border-white"><?php echo $row['company_id']?></td>
                 <td class="p-2 border  border-white space-x-3">
-                    <a class="inline-block mb-2 rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Edit</a>
+                <input type = "submit" class = "btn btn-lg btn-primary inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out mb-2" value = "Add to Cart">
                     <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="medicine.php?dlt=<?php echo $row['medicine_name']?>">Delete</a>
                 </td>
                 </tr>
