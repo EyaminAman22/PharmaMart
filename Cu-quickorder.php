@@ -6,6 +6,10 @@
     if(isset($_GET['order'])){
         $sql1 = mysqli_query($conn, "UPDATE cucart SET quickorder = 'quick' WHERE status LIKE 'order'");
     }
+    if(isset($_GET['rmv'])){
+        $p_name = $_GET['rmv'];
+        $dlt = mysqli_query($conn, "DELETE FROM cucart WHERE customer_id = $customer_id && product_name LIKE '$p_name' && quickorder LIKE 'quick'");
+    }
     $sql = "SELECT* FROM cucart WHERE customer_id = $customer_id && quickorder LIKE 'quick'";
     $result = mysqli_query($conn,$sql);
     $i = 0;
@@ -100,7 +104,7 @@
                             <td class="p-2 border  border-white"><?php echo $row['quantity']?></td>
                             <td class="p-2 border  border-white"><?php echo $row['total_price']?></td>
                             <td class="p-2 border  border-white space-3 gap-y-2">
-                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Remove</a>
+                                <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="Cu-quickorder.php?rmv=<?php echo $row['product_name']?>">Remove</a>
                             </td>
                             </tr>
                             <tr>
