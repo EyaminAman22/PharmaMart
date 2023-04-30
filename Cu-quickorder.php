@@ -107,14 +107,15 @@
                                 <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="Cu-quickorder.php?rmv=<?php echo $row['product_name']?>">Remove</a>
                             </td>
                             </tr>
+                    <?php
+                    }?>
                             <tr>
                                 <td class="p-2 border  border-white" colspan="4">Total Price</td>
                                 <td class="p-2 border  border-white"><?php echo $row2['total'] ?></td>
                             </tr>
                         </tbody>
                         
-                    <?php
-                    }?>
+                    
                 </table>
                 <div class="mt-12 text-center">
                     <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:text-white   hover:bg-navy text-white bg-indigo duration-700 ease-in-out show-pickup" href="#">Pick-up</a>
