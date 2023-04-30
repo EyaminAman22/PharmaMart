@@ -1,9 +1,12 @@
 <?php
     session_start();
     include('db_connect.php');
+    $customer_id = $_SESSION['customer_id'];
 
+    $info = mysqli_query($conn, "SELECT* FROM customer_info WHERE customer_id = $customer_id");
+    $row = mysqli_fetch_assoc($info);
     if(isset($_GET['submit'])){
-        $customer_id = $_SESSION['customer_id'];
+        
         $name = $_GET['cname'];
         $phone = $_GET['phone'];
         $pass = $_GET['pass'];
@@ -79,10 +82,10 @@
                 <h1 class="inline-block rounded-xl font-semibold text-20 text-white p-4 bg-navy mb-8">Profile Information</h1>
                 <form class="rounded-xl w-1/2 align-center text-center mx-auto justify-center bg-navy text-white flex flex-col gap-8 py-8 px-56">
                    
-                    <input class="h-[40px] block rounded-xl outline outline-1" type="text" placeholder="  User Name" name = "cname">
-                    <input class=" h-[40px]  block rounded-xl outline outline-1" type="number" placeholder="  Phone Number" name = "phone">
+                    <input class="h-[40px] block rounded-xl outline outline-1" type="text" placeholder= "<?php echo $row['c_name']?>" name = "cname">
+                    <input class=" h-[40px]  block rounded-xl outline outline-1" type="number" placeholder="<?php echo $row['c_phone']?>" name = "phone">
     
-                    <input class=" h-[40px]  block rounded-xl outline outline-1" type="password" placeholder="  Password" name = "pass"> 
+                    <input class=" h-[40px]  block rounded-xl outline outline-1" type="password" placeholder="<?php echo $row['pass']?>" name = "pass"> 
                 
                
                         <div class="flex justify-center items-center w-100 border-t p-3 space-x-3">
