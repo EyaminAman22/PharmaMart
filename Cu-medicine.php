@@ -83,7 +83,7 @@
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['dosage'] ?>mgf</span>
                             <span class="text-sm text-gray-500 dark:text-gray-400"><?php echo $row['type'] ?></span>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Price : <?php echo $row['sell_price'] ?></span>
-                            <form action="">
+                            <form class="ml-10" method = "POST" action="cu-add_cart.php?name=<?php echo $row['medicine_name']; ?>">
                             <input type="text" class="w-2/3 rounded-lg text-center" placeholder="  Quantity">
                               <!-- Hellow -->
                             <!-- <span class="text-sm text-gray-500 dark:text-gray-400">Stock : <?php echo $row['quantity'] ?> </span> -->
