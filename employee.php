@@ -3,9 +3,15 @@
     include('db_connect.php');
     $provider_id = $_SESSION['provider_id'];
 
+    if(isset($_GET['delete'])){
+        $e_id = $_GET['delete'];
+        
+        $dlt = mysqli_query($conn, "DELETE FROM employee WHERE id = $e_id");
+    }
     $sql = "SELECT* FROM employee WHERE provider_id LIKE '$provider_id'";
     $result = mysqli_query($conn,$sql);
-
+    
+    
     
 ?>
 <!doctype html>
@@ -82,8 +88,8 @@
                         <td class="p-2 border  border-white"><?php echo $row['salary']?></td>
                         <td class="p-2 border  border-white"><?php echo $row['address']?></td>
                         <td class="p-2 border  border-white space-3 gap-y-2">
-                            <a class="mb-1 inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Edit</a>
-                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Delete</a>
+<!--                            <a class="mb-1 inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="#">Edit</a> -->
+                            <a class="inline-block rounded-lg py-1 px-2 font-semibold hover:outline hover:ouline-navy hover:text-white   hover:bg-navy text-navy bg-white duration-700 ease-in-out" href="employee.php?delete=<?php echo $row['id'] ?>">Delete</a>
                         </td>
                         </tr>
                     </tbody>
