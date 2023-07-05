@@ -1,15 +1,5 @@
 <?php
-    session_start();
-    include('db_connect.php');
-    // $customer_id = $_SESSION['customer_id'];
-    
-    
-    // $sql1 = "SELECT* FROM cucart WHERE customer_id = $customer_id";
-    // $result = mysqli_query($conn,$sql1);
-    
-    // $sql_2 = mysqli_query($conn, "SELECT SUM(total_price) as total FROM cucart WHERE customer_id = $customer_id");
-    // $row2 = mysqli_fetch_assoc($sql_2); 
-    // $i = 0;
+   
 ?>
 <!doctype html>
 <html>
